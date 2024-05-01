@@ -2,6 +2,7 @@ package lucas.clubedolivro.model;
 
 import jakarta.persistence.*;
 import lombok.*;
+import lucas.clubedolivro.model.dtos.LivrosDTO;
 
 @Entity(name = "Livros")
 @Table(name = "Livros")
@@ -22,5 +23,11 @@ public class Livros {
     @JoinColumn(name = "clientes_id")
     private Clientes clientes;
 
+    public Livros(LivrosDTO livrosDTO) {
+        this.nomeLivro = livrosDTO.nomeLivro();
+        this.autor = livrosDTO.autor();
+        this.editora = livrosDTO.editora();
+        this.genero = livrosDTO.genero();
+    }
 
 }
