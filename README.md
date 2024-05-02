@@ -39,6 +39,6 @@
 |           |                |
 
 ### Casos de uso
-1. O cliente deve conseguir comprar qualquer livro desde que o mesmo exista e esteja disponível em estoque.
+1. O cliente deve conseguir comprar qualquer livro desde que o mesmo exista.
 2. Caso não seja possível a compra do livro, o sistema deverá lançar uma Exception.
 3. O cliente deve conseguir listar os livros comprados. Caso não tenha nenhum livro comprado, o sistema deverá lançar uma exception.
