@@ -9,6 +9,8 @@ import lucas.clubedolivro.model.dtos.LivrosDTO;
 @EqualsAndHashCode
 @Getter
 @Setter
+@AllArgsConstructor
+@NoArgsConstructor
 public class Livros {
 
     @Id
