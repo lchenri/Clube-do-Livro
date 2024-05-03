@@ -1,5 +1,7 @@
 package lucas.clubedolivro.controller;
 
+import lucas.clubedolivro.exception.ExceptionBookNotFound;
+import lucas.clubedolivro.exception.ExceptionHandlerController;
 import lucas.clubedolivro.model.Clientes;
 import lucas.clubedolivro.model.Livros;
 import lucas.clubedolivro.model.dtos.ClientesDTO;
@@ -28,19 +30,20 @@ public class ClientesController {
         return new ResponseEntity<>(novoCliente, HttpStatus.CREATED);
     }
 
-    @PostMapping("/comprar/{nomeLivro}")
-    public ResponseEntity purchaseBook(@PathVariable String nomeLivro ){
-        Optional<Livros> teste = livrosService.livroExiste(nomeLivro);
-        String sucesso = "Livro '" + nomeLivro + "' encontrado com sucesso";
-        if(teste.isEmpty()){
-            sucesso = "Livro não encontrado!";
-            return new ResponseEntity<>(sucesso, HttpStatus.NOT_FOUND);
+
+    @PostMapping("/comprar/{nomeCliente}/{nomeLivro}")
+    public ResponseEntity purchaseBook(@PathVariable String nomeCliente, @PathVariable String nomeLivro){
+        Optional<Livros> livro = livrosService.getThisLivro(nomeLivro);
+        Optional<Clientes> cliente = clientesService.getThisCliente(nomeCliente);
+        if(livro.isEmpty() || cliente.isEmpty()){
+            return new ExceptionHandlerController().threatNullPointerException();
         }
-        return new ResponseEntity<>(teste, HttpStatus.OK);
+        return clientesService.bookRegister(cliente.get(), livro.get());
     }
 
     @GetMapping("/cadastrados")
     public ResponseEntity<List<Clientes>> getAllClients(){
         return new ResponseEntity<>(clientesService.getAllClients(), HttpStatus.OK);
     }
+
 }

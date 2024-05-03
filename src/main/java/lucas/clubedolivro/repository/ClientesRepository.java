@@ -8,4 +8,6 @@ import org.springframework.stereotype.Repository;
 import java.util.Optional;
 @Repository
 public interface ClientesRepository extends JpaRepository<Clientes, Long> {
+    Optional<Clientes> findByNome(String nome);
+    Optional<Clientes> findClientesByLivrosAdquiridosContains(Livros livro);
 }

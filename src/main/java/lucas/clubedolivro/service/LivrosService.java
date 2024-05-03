@@ -1,9 +1,12 @@
 package lucas.clubedolivro.service;
 
+import lucas.clubedolivro.model.Clientes;
 import lucas.clubedolivro.model.Livros;
 import lucas.clubedolivro.model.dtos.LivrosDTO;
 import lucas.clubedolivro.repository.LivrosRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,8 +27,10 @@ public class LivrosService {
         return livrosRepository.findAll();
     }
 
-    public Optional<Livros> livroExiste(String nomeLivro){
+    public Optional<Livros> getThisLivro(String nomeLivro){
         Optional<Livros> livro = livrosRepository.findByNomeLivro(nomeLivro);
         return livro;
     }
+
+
 }

@@ -1,5 +1,6 @@
 package lucas.clubedolivro.model;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
 import lucas.clubedolivro.model.dtos.LivrosDTO;
@@ -23,6 +24,7 @@ public class Livros {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "clientes_id")
+    @JsonBackReference
     private Clientes clientes;
 
     public Livros(LivrosDTO livrosDTO) {

@@ -1,5 +1,7 @@
 package lucas.clubedolivro.model;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -25,6 +27,7 @@ public class Clientes {
     private String telefone;
 
     @OneToMany(mappedBy = "clientes", cascade = CascadeType.ALL)
+    @JsonManagedReference
     private List<Livros> livrosAdquiridos;
 
     public Clientes(ClientesDTO clientesDTO){
@@ -33,5 +36,8 @@ public class Clientes {
         this.telefone = clientesDTO.telefone();
     }
 
-
+    public void addLivrosAdquiridos(Livros livro) {
+        this.livrosAdquiridos.add(livro);
+        livro.setClientes(this);
+    }
 }
