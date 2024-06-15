@@ -1,10 +1,9 @@
 package lucas.clubedolivro.controller;
 
-import lucas.clubedolivro.exception.ExceptionBookNotFound;
 import lucas.clubedolivro.exception.ExceptionHandlerController;
-import lucas.clubedolivro.model.Clientes;
-import lucas.clubedolivro.model.Livros;
-import lucas.clubedolivro.model.dtos.ClientesDTO;
+import lucas.clubedolivro.model.clientes.Clientes;
+import lucas.clubedolivro.model.livros.Livros;
+import lucas.clubedolivro.model.clientes.ClientesDTO;
 import lucas.clubedolivro.service.ClientesService;
 import lucas.clubedolivro.service.LivrosService;
 import org.springframework.beans.factory.annotation.Autowired;

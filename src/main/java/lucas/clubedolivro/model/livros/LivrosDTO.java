@@ -1,4 +1,4 @@
-package lucas.clubedolivro.model.dtos;
+package lucas.clubedolivro.model.livros;
 
 public record LivrosDTO(
         String nomeLivro,

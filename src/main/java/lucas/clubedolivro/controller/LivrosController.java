@@ -1,7 +1,7 @@
 package lucas.clubedolivro.controller;
 
-import lucas.clubedolivro.model.Livros;
-import lucas.clubedolivro.model.dtos.LivrosDTO;
+import lucas.clubedolivro.model.livros.Livros;
+import lucas.clubedolivro.model.livros.LivrosDTO;
 import lucas.clubedolivro.service.LivrosService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

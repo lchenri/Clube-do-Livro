@@ -1,13 +1,12 @@
-package lucas.clubedolivro.model;
+package lucas.clubedolivro.model.clientes;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonManagedReference;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import lucas.clubedolivro.model.dtos.ClientesDTO;
+import lucas.clubedolivro.model.livros.Livros;
 
 import java.util.List;
 

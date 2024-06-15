@@ -1,8 +1,8 @@
 package lucas.clubedolivro.service;
 
-import lucas.clubedolivro.model.Clientes;
-import lucas.clubedolivro.model.Livros;
-import lucas.clubedolivro.model.dtos.ClientesDTO;
+import lucas.clubedolivro.model.clientes.Clientes;
+import lucas.clubedolivro.model.livros.Livros;
+import lucas.clubedolivro.model.clientes.ClientesDTO;
 import lucas.clubedolivro.repository.ClientesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;

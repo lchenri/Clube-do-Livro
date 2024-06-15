@@ -1,9 +1,9 @@
-package lucas.clubedolivro.model;
+package lucas.clubedolivro.model.livros;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
 import jakarta.persistence.*;
 import lombok.*;
-import lucas.clubedolivro.model.dtos.LivrosDTO;
+import lucas.clubedolivro.model.clientes.Clientes;
 
 @Entity(name = "Livros")
 @Table(name = "Livros")
