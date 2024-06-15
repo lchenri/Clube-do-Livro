@@ -2,6 +2,7 @@
 - Java
 - Spring Boot
 - Spring MVC
+- Spring Security
 - PostgreSQL
 - Java Persistence API - JPA
 - SpringDoc OpenAPI3
