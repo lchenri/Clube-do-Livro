@@ -24,9 +24,10 @@ public class AuthenticationController {
     private TokenService tokenService;
     private UserService userService;
 
-    public AuthenticationController(AuthenticationManager authenticationManager, TokenService tokenService) {
+    public AuthenticationController(AuthenticationManager authenticationManager, TokenService tokenService, UserService userService) {
         this.authenticationManager = authenticationManager;
         this.tokenService = tokenService;
+        this.userService = userService;
     }
 
     @PostMapping("/login")

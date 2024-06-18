@@ -29,5 +29,9 @@ public class LivrosService {
         return livro;
     }
 
+    public Optional<Livros> getLivrosByCliente(Long clienteId){
+        return livrosRepository.findByClientes_Id(clienteId);
+    }
+
 
 }

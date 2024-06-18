@@ -45,4 +45,10 @@ public class ClientesController {
         return new ResponseEntity<>(clientesService.getAllClients(), HttpStatus.OK);
     }
 
+    @GetMapping("/livrosComprados/{clienteId}")
+    public ResponseEntity<List<Livros>> getAllLivros(@PathVariable Long clienteId){
+        if(livrosService.getLivrosByCliente(clienteId).isEmpty()) return ResponseEntity.badRequest().build();
+        return new ResponseEntity(livrosService.getLivrosByCliente(clienteId), HttpStatus.OK);
+    }
+
 }

@@ -17,13 +17,13 @@ public class LivrosController {
     @Autowired
     private LivrosService livrosService;
 
-    @PostMapping
+    @PostMapping("/create")
     public ResponseEntity<Livros> createLivro(@RequestBody LivrosDTO livrosDTO){
         Livros novoLivro = livrosService.createLivro(livrosDTO);
         return new ResponseEntity<>(novoLivro, HttpStatus.OK);
     }
 
-    @GetMapping
+    @GetMapping("/livroscadastrados")
     public ResponseEntity<List<Livros>> getAllLivros(){
         List<Livros> livros = livrosService.getAllLivros();
         return new ResponseEntity<>(livros, HttpStatus.ACCEPTED);
