@@ -34,3 +34,4 @@ A documentação completa da API pode ser acessada através da interface Swagger
 2. Navegue até o diretório do projeto: `cd Clube-do-Livro`
 3. Compile e execute a aplicação: `mvn spring-boot:run`
 4. Acesse a aplicação no navegador: [http://localhost:8080](http://localhost:8080)
+
