@@ -2,6 +2,8 @@
 - Java
 - Spring Boot
 - Spring MVC
+- Spring Security
+- JSON Web Tokens - JWT
 - PostgreSQL
 - Java Persistence API - JPA
 - SpringDoc OpenAPI3
