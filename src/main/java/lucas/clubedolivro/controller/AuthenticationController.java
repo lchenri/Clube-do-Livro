@@ -1,5 +1,6 @@
 package lucas.clubedolivro.controller;
 
+import io.swagger.v3.oas.annotations.Operation;
 import jakarta.validation.Valid;
 import lucas.clubedolivro.infra.security.TokenService;
 import lucas.clubedolivro.model.user.User;
@@ -30,6 +31,7 @@ public class AuthenticationController {
         this.userService = userService;
     }
 
+    @Operation(summary = "Ação de login")
     @PostMapping("/login")
     public ResponseEntity login(@RequestBody @Valid UserRequestDTO userRequestDTO){
         var usernamePassword = new UsernamePasswordAuthenticationToken(userRequestDTO.login(), userRequestDTO.password());
@@ -40,6 +42,7 @@ public class AuthenticationController {
         return ResponseEntity.ok(new UserResponseDTO(token));
     }
 
+    @Operation(summary = "Ação de registro no sistema")
     @PostMapping("/register")
     public ResponseEntity register(@RequestBody @Valid UserRegisterDTO userRegisterDTO){
         if(this.userService.loadUserByUsername(userRegisterDTO.username()) != null) return ResponseEntity.badRequest().build();
