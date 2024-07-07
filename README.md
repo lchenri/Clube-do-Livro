@@ -30,7 +30,7 @@ A documentação completa da API pode ser acessada através da interface Swagger
 
 # Como Executar o Projeto
 
-1. Clone o repositório: `git clone <URL do repositório>`
-2. Navegue até o diretório do projeto: `cd <diretório do projeto>`
+1. Clone o repositório: `git clone https://github.com/lchenri/Clube-do-Livro.git`
+2. Navegue até o diretório do projeto: `cd Clube-do-Livro`
 3. Compile e execute a aplicação: `mvn spring-boot:run`
 4. Acesse a aplicação no navegador: [http://localhost:8080](http://localhost:8080)
