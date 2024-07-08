@@ -8,6 +8,7 @@
 - Java Persistence API - JPA
 - SpringDoc OpenAPI3
 - Lombok
+- JUnit e Mockito
 
 # Práticas Adotadas
 - SOLID, DRY
@@ -16,6 +17,7 @@
 - Injeção de Dependências
 - Tratamento de exceções
 - Geração de documentação com o Swagger
+- Testes com JUnit e Mockito
 
 # O que é
 - Projeto que visa implementar o backend de um clube do livro, na qual terá o cadastro dos clientes, livros e as operações de vendas de livros.
