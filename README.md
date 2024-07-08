@@ -24,9 +24,30 @@
 
 A documentação completa da API pode ser acessada através da interface Swagger. Para visualizar a documentação, siga os passos abaixo:
 
-1. Inicie a aplicação Spring Boot.
-2. Acesse o seguinte URL no seu navegador: [http://localhost:8080/swagger-ui.html](http://localhost:8080/swagger-ui.html)
+1. [Inicie a aplicação Spring Boot](#como-executar-o-projeto).
+2. Acesse o seguinte URL no seu navegador: [http://localhost:8080/swagger-ui/index.html](http://localhost:8080/swagger-ui/index.html)
 
+# Configuração do Banco de Dados
+
+Para configurar o banco de dados PostgreSQL, siga os passos abaixo:
+
+1. Instale o PostgreSQL. Você pode baixar a versão mais recente [aqui](https://www.postgresql.org/download/).
+2. Crie um banco de dados chamado `clubedolivro`.
+   ```sql
+   CREATE DATABASE clubedolivro;
+   ```
+3. Crie um usuário com permissões para acessar esse banco de dados.
+    ```sql
+    CREATE USER usuario WITH PASSWORD '1234';
+    GRANT ALL PRIVILEGES ON DATABASE clubedolivro TO usuario;
+    ```
+4. No arquivo application.properties, configure as propriedades de conexão com o banco de dados. Deve ficar algo similar ao que está abaixo:
+    ```
+    spring.datasource.url=jdbc:postgresql://localhost:5432/clubedolivro
+    spring.datasource.username=usuario
+    spring.datasource.password=1234
+    ...
+    ```
 
 # Como Executar o Projeto
 
